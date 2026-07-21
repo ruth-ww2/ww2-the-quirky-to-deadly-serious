@@ -166,11 +166,302 @@
       color: #444;
     }
 
+    .author-section {
+      width: 100%;
+      background-color: #1E1C19;
+      padding: clamp(2.5rem, 6vw, 5rem) 1.5rem;
+    }
+
+    .author-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: clamp(2rem, 6vw, 4.5rem);
+    }
+
+    .author-photo-wrap {
+      flex: 0 0 auto;
+      width: clamp(140px, 20vw, 210px);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid rgb(255 255 255 / 0.12);
+      background-color: #2A2723;
+    }
+
+    .author-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .author-eyebrow {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #A79B8B;
+      margin-bottom: 0.7rem;
+    }
+
+    .author-copy h2 {
+      font-family: 'Libre Baskerville', 'Lucida Bright', Georgia, serif;
+      font-size: clamp(1.8rem, 3.4vw, 3rem);
+      line-height: 1.2;
+      color: #F2EDE6;
+      margin-bottom: 1rem;
+    }
+
+    .author-copy {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      color: #B8AEA2;
+      max-width: 63ch;
+      flex: 1 1 auto;
+      min-width: 0;
+      text-align: left;
+      line-height: 1.4;
+      text-wrap: pretty;
+    }
+
+    .author-link {
+      margin-top: 1.15rem;
+    }
+
+    .author-link a {
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: none;
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #E37B5E;
+    }
+
+    .author-link a:hover {
+      color: #F59A7D;
+    }
+
+    @media (max-width: 820px) {
+      .author-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .author-copy p {
+        max-width: none;
+      }
+    }
+
+    .praise-section {
+      margin-top: clamp(2.75rem, 6vw, 4.75rem);
+      padding: clamp(2rem, 5vw, 3.5rem) 0;
+      background: transparent;
+      color: #e8dfd1;
+    }
+
+    .praise-carousel {
+      position: relative;
+      width: min(100%, 1170px);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .praise-eyebrow {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: #d4c6b2;
+      margin-bottom: 0.55rem;
+    }
+
+    .praise-viewport {
+      display: grid;
+      grid-template-columns: minmax(44px, 56px) 1fr minmax(44px, 56px);
+      align-items: center;
+      gap: clamp(0.6rem, 2vw, 1.4rem);
+    }
+
+    .praise-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid #74685b;
+      background: transparent;
+      color: #e9dfd0;
+      font-size: 1.2rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .praise-arrow:hover {
+      background-color: rgb(255 255 255 / 0.08);
+      border-color: #a28f7b;
+    }
+
+    .praise-arrow:focus-visible,
+    .praise-dot:focus-visible,
+    .praise-toggle:focus-visible {
+      outline: 3px solid #f5c27f;
+      outline-offset: 3px;
+    }
+
+    .praise-slides {
+      min-height: 12rem;
+      display: grid;
+      place-items: center;
+    }
+
+    .praise-slide {
+      animation: praiseFade 320ms ease;
+    }
+
+    .praise-quote {
+      font-family: 'Libre Baskerville', 'Lucida Bright', Georgia, serif;
+      font-size: clamp(1.4rem, 7vw, 2rem);
+      line-height: 1.35;
+      color: #efe6da;
+      font-style: italic;
+      margin-bottom: 1.45rem;
+      text-wrap: pretty;
+    }
+
+    .praise-attribution {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #d0c1ac;
+    }
+
+    .praise-controls {
+      margin-top: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .praise-dots {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .praise-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid #7f7265;
+      background-color: #7f7265;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .praise-dot[aria-current="true"] {
+      background-color: #e37b5e;
+      border-color: #e37b5e;
+      transform: scale(1.1);
+    }
+
+    .praise-toggle {
+      min-height: 44px;
+      border: 1px solid #74685b;
+      background: transparent;
+      color: #d8cbbb;
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display:none;
+    }
+
+    .praise-toggle:hover {
+      background-color: rgb(255 255 255 / 0.08);
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @keyframes praiseFade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .praise-slide {
+        animation-duration: 1ms;
+      }
+
+      .praise-arrow,
+      .praise-dot,
+      .praise-toggle {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .praise-viewport {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .praise-slides {
+        min-height: 13rem;
+        order: 1;
+      }
+
+      .praise-arrow {
+        justify-self: center;
+      }
+
+      .praise-arrow[data-action="prev"] {
+        order: 2;
+      }
+
+      .praise-arrow[data-action="next"] {
+        order: 3;
+      }
+
+      .praise-controls {
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      
+    }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.85rem;
       color: #999;
+      border-top: 1px solid #5d5d63;
+      margin-top: 3rem;
     }
   </style>
 </head>
@@ -209,6 +500,230 @@
         </a>
     </div>
   </main>
+  
+
+  <section class="author-section" aria-labelledby="about-ruth-heading">
+    <div class="author-inner">
+      <div class="author-photo-wrap">
+        <img src="ruth-sabath-rosenthal-author.jpg" alt="Ruth Sabath Rosenthal" width="200" height="200" loading="lazy" decoding="async">
+      </div>
+      <div class="author-copy">
+        <p class="author-eyebrow">About the Author</p>
+        <h2 id="about-ruth-heading">Ruth Sabath Rosenthal</h2>
+        <p>A New York City poet, well published in the U.S. and internationally. Writing since 2000 — and tutored by well-regarded New York poets, primarily at the 92nd Street Y — her work spans five poetry collections, a myriad of journals and anthologies, and a 2006 Pushcart Prize nomination. She also edited the memoir <em>Manfred</em>.</p>
+        <p class="author-link"><a href="https://newyorkcitypoet.com/" target="_blank" rel="noopener">NEWYORKCITYPOET.COM &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="praise" class="praise-section" aria-labelledby="praise-heading">
+    <div class="praise-carousel" role="region" aria-roledescription="carousel" aria-label="Reader praise and reviews">
+      <p id="praise-heading" class="praise-eyebrow">Praise</p>
+
+      <div class="praise-viewport">
+        <button class="praise-arrow" type="button" data-action="prev" aria-controls="praise-slides" aria-label="Show previous quote">&larr;</button>
+
+        <div class="praise-slides" id="praise-slides">
+          <figure class="praise-slide" data-slide role="group" aria-roledescription="slide" aria-label="1 of 4">
+            <blockquote class="praise-quote">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip &mdash; duis aute irure dolor in reprehenderit voluptate.</blockquote>
+            <figcaption class="praise-attribution">&mdash; Poet &amp; Critic, Journal (placeholder)</figcaption>
+          </figure>
+
+          <figure class="praise-slide" data-slide role="group" aria-roledescription="slide" aria-label="2 of 4" hidden aria-hidden="true">
+            <blockquote class="praise-quote">A remarkable blend of intimate memory and careful research, told with both grace and urgency from first page to last.</blockquote>
+            <figcaption class="praise-attribution">&mdash; Literary Review, New York (placeholder)</figcaption>
+          </figure>
+
+          <figure class="praise-slide" data-slide role="group" aria-roledescription="slide" aria-label="3 of 4" hidden aria-hidden="true">
+            <blockquote class="praise-quote">These books preserve what history risks forgetting, and they do so with a voice that is steady, humane, and unforgettable.</blockquote>
+            <figcaption class="praise-attribution">&mdash; Historian &amp; Essayist (placeholder)</figcaption>
+          </figure>
+
+          <figure class="praise-slide" data-slide role="group" aria-roledescription="slide" aria-label="4 of 4" hidden aria-hidden="true">
+            <blockquote class="praise-quote">Rosenthal turns personal witness into enduring literature, balancing sharp detail with deep compassion throughout.</blockquote>
+            <figcaption class="praise-attribution">&mdash; Poetry Editor, Quarterly (placeholder)</figcaption>
+          </figure>
+        </div>
+
+        <button class="praise-arrow" type="button" data-action="next" aria-controls="praise-slides" aria-label="Show next quote">&rarr;</button>
+      </div>
+
+      <div class="praise-controls">
+        <div class="praise-dots" role="group" aria-label="Choose a quote to display">
+          <button class="praise-dot" type="button" data-dot="0" aria-controls="praise-slides" aria-label="Show quote 1 of 4" aria-current="true"></button>
+          <button class="praise-dot" type="button" data-dot="1" aria-controls="praise-slides" aria-label="Show quote 2 of 4" aria-current="false"></button>
+          <button class="praise-dot" type="button" data-dot="2" aria-controls="praise-slides" aria-label="Show quote 3 of 4" aria-current="false"></button>
+          <button class="praise-dot" type="button" data-dot="3" aria-controls="praise-slides" aria-label="Show quote 4 of 4" aria-current="false"></button>
+        </div>
+
+        <button class="praise-toggle" type="button" data-toggle-rotation aria-pressed="false" aria-label="Pause automatic slide rotation">Pause</button>
+      </div>
+
+      <p class="visually-hidden" aria-live="polite" aria-atomic="true" data-status></p>
+    </div>
+  </section>
+  
+
+
+
+  <script>
+    (function () {
+      var carousel = document.querySelector('.praise-carousel');
+      if (!carousel) {
+        return;
+      }
+
+      var slides = Array.from(carousel.querySelectorAll('[data-slide]'));
+      var dots = Array.from(carousel.querySelectorAll('[data-dot]'));
+      var prevButton = carousel.querySelector('[data-action="prev"]');
+      var nextButton = carousel.querySelector('[data-action="next"]');
+      var toggleButton = carousel.querySelector('[data-toggle-rotation]');
+      var status = carousel.querySelector('[data-status]');
+
+      if (!slides.length || !dots.length || !prevButton || !nextButton || !toggleButton || !status) {
+        return;
+      }
+
+      var currentIndex = 0;
+      var isManuallyPaused = false;
+      var isInteracting = false;
+      var timerId = null;
+      var intervalMs = 7000;
+      var reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      function modulo(index, length) {
+        return (index + length) % length;
+      }
+
+      function setPauseButtonState() {
+        toggleButton.setAttribute('aria-pressed', String(isManuallyPaused));
+        if (isManuallyPaused) {
+          toggleButton.textContent = 'Play';
+          toggleButton.setAttribute('aria-label', 'Start automatic slide rotation');
+        } else {
+          toggleButton.textContent = 'Pause';
+          toggleButton.setAttribute('aria-label', 'Pause automatic slide rotation');
+        }
+      }
+
+      function announce(index) {
+        status.textContent = 'Slide ' + (index + 1) + ' of ' + slides.length;
+      }
+
+      function showSlide(index) {
+        currentIndex = modulo(index, slides.length);
+
+        slides.forEach(function (slide, i) {
+          var isActive = i === currentIndex;
+          slide.hidden = !isActive;
+          slide.setAttribute('aria-hidden', String(!isActive));
+        });
+
+        dots.forEach(function (dot, i) {
+          dot.setAttribute('aria-current', String(i === currentIndex));
+        });
+
+        announce(currentIndex);
+      }
+
+      function stopRotation() {
+        if (timerId !== null) {
+          window.clearInterval(timerId);
+          timerId = null;
+        }
+      }
+
+      function canRotate() {
+        return !isManuallyPaused && !isInteracting && !reducedMotionQuery.matches;
+      }
+
+      function startRotation() {
+        stopRotation();
+        if (!canRotate()) {
+          return;
+        }
+
+        timerId = window.setInterval(function () {
+          showSlide(currentIndex + 1);
+        }, intervalMs);
+      }
+
+      prevButton.addEventListener('click', function () {
+        showSlide(currentIndex - 1);
+        startRotation();
+      });
+
+      nextButton.addEventListener('click', function () {
+        showSlide(currentIndex + 1);
+        startRotation();
+      });
+
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          var index = Number(dot.getAttribute('data-dot'));
+          if (!Number.isNaN(index)) {
+            showSlide(index);
+            startRotation();
+          }
+        });
+      });
+
+      toggleButton.addEventListener('click', function () {
+        isManuallyPaused = !isManuallyPaused;
+        setPauseButtonState();
+        startRotation();
+      });
+
+      carousel.addEventListener('mouseenter', function () {
+        isInteracting = true;
+        stopRotation();
+      });
+
+      carousel.addEventListener('mouseleave', function () {
+        isInteracting = false;
+        startRotation();
+      });
+
+      carousel.addEventListener('focusin', function () {
+        isInteracting = true;
+        stopRotation();
+      });
+
+      carousel.addEventListener('focusout', function () {
+        window.requestAnimationFrame(function () {
+          if (!carousel.contains(document.activeElement)) {
+            isInteracting = false;
+            startRotation();
+          }
+        });
+      });
+
+      carousel.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          showSlide(currentIndex - 1);
+          startRotation();
+        }
+
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          showSlide(currentIndex + 1);
+          startRotation();
+        }
+      });
+
+      if (typeof reducedMotionQuery.addEventListener === 'function') {
+        reducedMotionQuery.addEventListener('change', startRotation);
+      } else if (typeof reducedMotionQuery.addListener === 'function') {
+        reducedMotionQuery.addListener(startRotation);
+      }
+
+      setPauseButtonState();
+      showSlide(0);
+      startRotation();
+    })();
+  </script>
+
 
   <footer>
     &copy; <script>document.write(new Date().getFullYear())</script> WW2: The Quirky to Deadly Serious
