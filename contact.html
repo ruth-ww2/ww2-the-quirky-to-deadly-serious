@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &mdash; WW2: The Quirky to Deadly Serious</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+  <script src="/assets/site.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GXY554L6N3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GXY554L6N3');
+  </script>
+</head>
+<body>
+
+  <site-nav></site-nav>
+  <noscript>
+    <nav aria-label="Primary" style="background:#1E1C19;padding:0.75rem 1.25rem;">
+      <a href="/index.html" style="color:#d8cbbb;margin-right:1rem;">Home</a>
+      <a href="/on-a-ship-to-america.html" style="color:#d8cbbb;margin-right:1rem;">On a Ship to America</a>
+      <a href="/art-jewelry-gold.html" style="color:#d8cbbb;margin-right:1rem;">Art, Jewelry &amp; Gold</a>
+      <a href="/manfred.html" style="color:#d8cbbb;margin-right:1rem;">Manfred</a>
+      <a href="/contact.html" style="color:#d8cbbb;">Contact</a>
+    </nav>
+  </noscript>
+
+  <site-header></site-header>
+
+  <main class="contact-page">
+    <h1>Contact</h1>
+    <p>
+      Have a question or want to get in touch? Email
+      <!-- TODO: Replace with the real email address. -->
+      <a href="mailto:hello@example.com">hello@example.com</a>
+      or use the form below.
+    </p>
+
+    <!--
+      Google Form embed:
+      1. Open your form in Google Forms.
+      2. Click Send -> the < > (Embed HTML) tab.
+      3. Copy the iframe's src URL and paste it below, replacing FORM_ID.
+         It looks like: https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true
+    -->
+    <div class="contact-embed">
+      <iframe
+        src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true"
+        title="Contact form"
+        loading="lazy">
+        Loading&hellip;
+      </iframe>
+    </div>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>
